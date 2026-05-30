@@ -1,0 +1,33 @@
+{
+  "name": "doc-curator",
+  "version": "1.0.0",
+  "description": "Audit and maintain documentation quality, staleness, and alignment without writing docs itself. Generates cleanup plans and provides guidelines for other agents.",
+  "author": "Manfred Kipfelsberger",
+  "license": "MIT",
+  "keywords": [
+    "skill",
+    "documentation",
+    "maintenance",
+    "staleness",
+    "doc-curator",
+    "claude-code",
+    "agent-skills"
+  ],
+  "files": [
+    "SKILL.md",
+    "REFERENCE.md",
+    "README.md",
+    "curator-config.yaml.example"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/doc-curator.git"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/doc-curator#readme",
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/doc-curator/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

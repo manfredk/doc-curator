@@ -1,0 +1,90 @@
+# Doc Curator Configuration Template
+# Copy to .docs/curator-config.yaml in your project and customize
+
+# Global aggression level: low | medium | high
+# High: aggressively remove speculative, old, redundant content
+# Medium: flag for review, suggest removals
+# Low: note issues, don't auto-remove
+aggression: high
+
+# Time threshold for marking features "old" (in months)
+# Features older than this become candidates for condensing/archiving
+age-threshold-months: 6
+
+# Folder-specific configuration
+folder-config:
+  /docs:
+    aggression: high
+    age-threshold-months: 6
+    description: "Shared, permanent documentation"
+
+  /.docs:
+    aggression: high
+    auto-archive-days: 30
+    description: "Temporary, local-only documentation"
+
+# Which staleness signals should be checked?
+staleness-signals:
+  git-history:
+    enabled: true
+    description: "Flag docs where updated date < last related code commit"
+
+  broken-links:
+    enabled: true
+    description: "Check for orphaned references to PRDs, ADRs, stories"
+
+  doc-comments:
+    enabled: true
+    description: "Compare code doc comments with formal docs"
+    languages: [js, ts, py, go, rust]
+
+  speculative:
+    enabled: true
+    description: "Flag TODO, FIXME, TBD, WIP, Experimental"
+
+  redundancy:
+    enabled: true
+    description: "Flag when code comments fully explain feature"
+
+  age-based:
+    enabled: true
+    description: "Flag old features that should be condensed"
+
+# Frontmatter schema
+frontmatter:
+  required:
+    - title
+    - created
+    - updated
+    - status
+  optional:
+    - relevance
+    - linked-to
+    - owner
+    - version
+
+# Valid status values
+status-values:
+  current: "Active, regularly updated, reflects current code intent"
+  draft: "Work in progress, not yet finalized"
+  deprecated: "No longer relevant, will be removed soon"
+  archived: "Historical reference only, do not update"
+
+# Valid relevance values (optional)
+relevance-values:
+  high: "Critical for understanding the system"
+  medium: "Useful context but not essential"
+  low: "Nice to have, consider archiving"
+
+# Link format conventions in your docs
+link-conventions:
+  prd: "PRD#<number>"
+  adr: "ADR#<number>"
+  story: "STORY#<number>"
+  issue: "ISSUE#<number>"
+
+# How to handle planning mode output
+planning:
+  output-file: ".docs/.plan.md"
+  include-guidelines: true
+  grouped-by: "type"  # type | folder | severity
