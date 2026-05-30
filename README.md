@@ -1,6 +1,8 @@
 # Doc Curator Skill
 
-> **⚠️ v0.0.1 — First Draft**  
+[![Version](https://img.shields.io/badge/version-0.0.1-blue?style=flat-square)](https://github.com/manfredk/doc-curator/releases)
+[![Status](https://img.shields.io/badge/status-First%20Draft-yellow?style=flat-square)](https://github.com/manfredk/doc-curator/issues)
+
 > This is an early prototype. It hasn't been tested thoroughly in real projects yet. Please try it on your repositories and [post your experience as an issue](https://github.com/manfredk/doc-curator/issues) — feedback on what works, what doesn't, and edge cases you hit is invaluable.
 
 A documentation maintenance skill that watches your docs for staleness, misalignment, and consistency issues — then generates cleanup plans. Designed to keep documentation high-quality, intent-driven, and synchronized with code.
